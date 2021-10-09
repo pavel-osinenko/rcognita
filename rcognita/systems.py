@@ -332,7 +332,7 @@ class Sys3WRobot(System):
         .. math:: \mathrm d Q_t = - \\frac{1}{\\tau_{disturb}} \\left( Q_t \\mathrm d t + \\sigma_{disturb} ( \\mathrm d B_t + \\mu_{disturb}) \\right) ,
         
         where :math:`B` is the standard Brownian motion, :math:`Q` is the stochastic process whose realization is :math:`disturb`, and
-        :math:`\\tau_disturb, \\sigma_disturb, \\mu_disturb` are the time constant, standard deviation and mean, resp.
+        :math:`\\tau_{disturb}, \\sigma_{disturb}, \\mu_{disturb}` are the time constant, standard deviation and mean, resp.
         
         ``pars_disturb = [sigma_disturb, mu_disturb, tau_disturb]``, with each being an array of shape ``[dim_disturb, ]``
         
