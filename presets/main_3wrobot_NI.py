@@ -41,11 +41,15 @@ from rcognita.utilities import on_key_press
 
 import argparse
 
+#----------------------------------------EDUCATION
+
+#----------------------------------------/EDUCATION
+
 #----------------------------------------Set up dimensions
 dim_state = 3
 dim_input = 2
 dim_output = dim_state
-dim_disturb = 0
+dim_disturb = 2
 
 dim_R1 = dim_output + dim_input
 dim_R2 = dim_R1
@@ -183,7 +187,7 @@ assert args.state_init.size == dim_state
 globals().update(vars(args))
 
 #----------------------------------------(So far) fixed settings
-is_disturb = 0
+is_disturb = 1
 is_dyn_ctrl = 0
 
 t0 = 0
@@ -220,7 +224,7 @@ my_sys = systems.Sys3WRobotNI(sys_type="diff_eqn",
                                      ctrl_bnds=ctrl_bnds,
                                      is_dyn_ctrl=is_dyn_ctrl,
                                      is_disturb=is_disturb,
-                                     pars_disturb=[])
+                                     pars_disturb = np.array([[20*dt, 20*dt], [0, 0], [0.3, 0.3]]))
 
 observation_init = my_sys.out(state_init)
 
@@ -303,7 +307,7 @@ my_simulator = simulator.Simulator(sys_type = "diff_eqn",
                                    closed_loop_rhs = my_sys.closed_loop_rhs,
                                    sys_out = my_sys.out,
                                    state_init = state_init,
-                                   disturb_init = [],
+                                   disturb_init = np.array([0, 0]),
                                    action_init = action_init,
                                    t0 = t0,
                                    t1 = t1,
