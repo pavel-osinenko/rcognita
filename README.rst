@@ -306,7 +306,7 @@ Bibtex reference
 
     @misc{rcognita2020,
     author =   {Pavel Osinenko},
-    title =    {Rcognita: a framework for hybrid agent-enviroment simultion},
+    title =    {rcognita: a framework for reinforcement learning agent design and simulation},
     howpublished = {\url{https://github.com/pavel-osinenko/rcognita}},
     year = {2020}
     }
